@@ -6,3 +6,42 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+	/* 
+  change box model so that borders and padding 
+  are not added to the total height / width of the element 
+  */
+	box-sizing: border-box;
+}
+
+/* inheritance in body */
+/* font-related properties are placed here */
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	/* 1.7 bigger than normal line height */
+	line-height: 1.7;
+	color: #777777;
+
+	padding: 30px;
+}
+
+.header {
+	height: 95vh;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(126, 213, 111, 0.8),
+			rgba(40, 180, 131, 0.8)
+		),
+		url("../img/hero.jpg");
+	background-size: cover;
+	/* bg-position dictates if it will crop the opposite of the value on device resize */
+	background-position: top;
+	/* 4 coordinates to show element */
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
