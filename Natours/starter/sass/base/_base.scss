@@ -1,0 +1,24 @@
+// low-leve basics
+// resets and all
+/* reset */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	/* 
+  change box model so that borders and padding 
+  are not added to the total height / width of the element 
+  */
+	box-sizing: inherit;
+}
+
+html {
+	// this defines what 1rem is
+	font-size: 62.5%;
+}
+
+/* inheritance in body */
+body {
+	box-sizing: border-box;
+}

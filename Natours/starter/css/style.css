@@ -14,62 +14,8 @@ html {
   font-size: 62.5%; }
 
 /* inheritance in body */
-/* font-related properties are placed here */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  /* 1.7 bigger than normal line height */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  /* bg-position dictates if it will crop the opposite of the value on device resize */
-  background-position: top;
-  /* 4 coordinates to show element */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  display: block;
-  animation: moveInLeft 1s ease-out; }
-
-.heading-primary--sub {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  display: block;
-  animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -99,9 +45,36 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-/* when the .btn class is a link */
-.btn:link,
-.btn:visited {
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    display: block;
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    display: block;
+    animation: moveInRight 1s ease-out; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  /* 1.7 bigger than normal line height */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -114,6 +87,9 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translate(-0.1rem);
@@ -122,6 +98,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: white; }
 
 .btn::after {
   content: "";
@@ -135,14 +113,28 @@ body {
   z-index: -1;
   transition: all 0.4s; }
 
-.btn-white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /* apply animation before the animation starts */
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  /* bg-position dictates if it will crop the opposite of the value on device resize */
+  background-position: top;
+  /* 4 coordinates to show element */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
